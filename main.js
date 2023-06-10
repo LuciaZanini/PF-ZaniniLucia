@@ -25,43 +25,37 @@ const productos = [
         }, description: 'Strong base wooden mate'
     },
     {
-        id: "mate-05", name: 'Poseidon', price: 1000, image: 'images/5.jpg', categoria: {
-            nombre: "Mates",
-            id: "mates"
-        }, description: 'Basic but nice though'
-    },
-    {
-        id: "bombilla-01", name: "Basic", price: 200, image: 'images/bombilla1.jpg', categoria: {
+        id: "bombilla-01", name: "Basic", price: 200, image: 'images/bombilla4.jpg', categoria: {
             nombre: "Bombillas",
             id: "bombillas"
         }, description: 'Cute'
     },
     {
-        id: "bombilla-02", name: "Intermediate", price: 30, image: 'images/bombilla2.jpg', categoria: {
+        id: "bombilla-02", name: "Lucky Charm", price: 30, image: 'images/bombilla5.jpg', categoria: {
             nombre: "Bombillas",
             id: "bombillas"
         }, description: 'Fancy'
     },
     {
-        id: "bombilla-03", name: "Advanced", price: 400, image: 'images/bombilla3..jpg', categoria: {
+        id: "bombilla-03", name: "Flower", price: 400, image: 'images/bombilla6.jpg', categoria: {
             nombre: "Bombillas",
             id: "bombillas"
         }, description: 'Variety'
     },
     {
-        id: "matero-01", name: "Formal", price: 5000, image: 'images/matero1.jpg', categoria: {
+        id: "matero-01", name: "Office", price: 5000, image: 'images/matero3.jpg', categoria: {
             nombre: "Materos",
             id: "materos"
         }, description: 'Formal look'
     },
     {
-        id: "matero-02", name: "Chill", price: 2500, image: 'images/matero2.jpg', categoria: {
+        id: "matero-02", name: "Chill", price: 2500, image: 'images/matero5.jpg', categoria: {
             nombre: "Materos",
             id: "materos"
         }, description: 'Afternoon tea'
     },
     {
-        id: "matero-03", name: "Bright", price: 3000, image: 'images/matero3.jpg', categoria: {
+        id: "matero-03", name: "Backpacker", price: 3000, image: 'images/matero6.jpg', categoria: {
             nombre: "Materos",
             id: "materos"
         }, description: 'Bright colours'
