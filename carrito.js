@@ -77,6 +77,28 @@ function actualizarBotonesEliminar() {
 
 // Función para eliminar un producto en el carrito
 function eliminarDelCarrito(e) {
+
+// Libreria
+Toastify({
+    text: "Item removed",
+    duration: 3000,
+    close: true,
+    gravity: "top", // `top` or `bottom`
+    position: "right", // `left`, `center` or `right`
+    stopOnFocus: true, // Prevents dismissing of toast on hover
+    style: {
+        background: "linear-gradient(to right, #964B00, #FFFFFF)",
+        textTransform: "uppercase",
+        borderRadius: "2rem",
+        fontSize: "0.75rem",
+    },
+    offset: {
+        x: "1.5rem", // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+        y: "1.5rem" // vertical axis - can be a number or a string indicating unity. eg: '2em'
+      },       
+    onClick: function(){} // Callback after click
+  }).showToast();
+
     const idBoton = e.currentTarget.id;
     const index = productosEnCarrito.findIndex(producto => producto.id === idBoton);
 
@@ -91,10 +113,23 @@ botonVaciar.addEventListener("click", vaciarCarrito);
 // Función para vaciar el carrito
 function vaciarCarrito() {
 
-    productosEnCarrito.length = 0;
-    localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
-    cargarProductosCarrito();
-
+// Libreria
+    Swal.fire({
+        title: `Are you sure?`,
+        icon: 'question',
+        html:
+          'All your items will be removed',
+        showCancelButton: true,
+        focusConfirm: false,
+        confirmButtonText:'Yes',
+        cancelButtonText:'No',
+      }).then((result) => {
+        if (result.isConfirmed) {
+            productosEnCarrito.length = 0;
+            localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
+            cargarProductosCarrito();
+        } 
+      })
 }
 
 // Función para actualizar el total del carrito de compra

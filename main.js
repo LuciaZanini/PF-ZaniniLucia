@@ -1,66 +1,11 @@
-// Array de objetos -PRODUCTOS
-const productos = [
-    {
-        id: "mate-01", name: 'Zeus', price: 2000, image: './images/1.jpg', categoria: {
-            nombre: "Mates",
-            id: "mates"
-        }, description: 'Wooden mate'
-    },
-    {
-        id: "mate-02", name: 'Atenas', price: 1500, image: './images/2.jpg', categoria: {
-            nombre: "Mates",
-            id: "mates"
-        }, description: 'Pumpkin mate'
-    },
-    {
-        id: "mate-03", name: 'Arquimedes', price: 1300, image: 'images/3.jpg', categoria: {
-            nombre: "Mates",
-            id: "mates"
-        }, description: 'Smoky flavour'
-    },
-    {
-        id: "mate-04", name: 'Hades', price: 1800, image: 'images/4.jpg', categoria: {
-            nombre: "Mates",
-            id: "mates"
-        }, description: 'Strong base wooden mate'
-    },
-    {
-        id: "bombilla-01", name: "Basic", price: 200, image: 'images/bombilla4.jpg', categoria: {
-            nombre: "Bombillas",
-            id: "bombillas"
-        }, description: 'Cute'
-    },
-    {
-        id: "bombilla-02", name: "Lucky Charm", price: 30, image: 'images/bombilla5.jpg', categoria: {
-            nombre: "Bombillas",
-            id: "bombillas"
-        }, description: 'Fancy'
-    },
-    {
-        id: "bombilla-03", name: "Flower", price: 400, image: 'images/bombilla6.jpg', categoria: {
-            nombre: "Bombillas",
-            id: "bombillas"
-        }, description: 'Variety'
-    },
-    {
-        id: "matero-01", name: "Office", price: 5000, image: 'images/matero3.jpg', categoria: {
-            nombre: "Materos",
-            id: "materos"
-        }, description: 'Formal look'
-    },
-    {
-        id: "matero-02", name: "Chill", price: 2500, image: 'images/matero5.jpg', categoria: {
-            nombre: "Materos",
-            id: "materos"
-        }, description: 'Afternoon tea'
-    },
-    {
-        id: "matero-03", name: "Backpacker", price: 3000, image: 'images/matero6.jpg', categoria: {
-            nombre: "Materos",
-            id: "materos"
-        }, description: 'Bright colours'
-    }
-];
+let productos = [];
+
+fetch("./productos.json")
+    .then(response => response.json())
+    .then(data => {
+        productos = data;
+        cargarProductos(productos);
+    })
 
 const contenedorProductos = document.querySelector("#contenedor-productos");
 const botonesCategorias = document.querySelectorAll(".boton-categoria");
@@ -92,7 +37,6 @@ function cargarProductos(productosElegidos) {
     actualizarBotonesAgregar();
 }
 
-cargarProductos(productos);
 
 // Evento para los botones
 
@@ -152,6 +96,26 @@ if (productosEnCarritoLS) {
 
 // Función para agregar un producto al carrito
 function agregarAlCarrito(e) {
+
+    Toastify({
+        text: "Item added",
+        duration: 3000,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: "linear-gradient(to right, #964B00, #FFFFFF)",
+            textTransform: "uppercase",
+            borderRadius: "2rem",
+            fontSize: "0.75rem",
+        },
+        offset: {
+            x: "1.5rem", // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+            y: "1.5rem" // vertical axis - can be a number or a string indicating unity. eg: '2em'
+          },       
+        onClick: function(){} // Callback after click
+      }).showToast();
 
     const idBoton = e.currentTarget.id;
     const productoAgregado = productos.find(producto => producto.id === idBoton);

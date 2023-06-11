@@ -6,16 +6,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Best Mate</title>
+    <!--Bootstrap-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <!--Librerias-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <!--CSS-->
     <link rel="stylesheet" href="./style.css">
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Indie+Flower&family=Nunito+Sans:wght@300&family=Quicksand&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
 
     <div class="wrapper">
+        <header class="header-mobile">
+            <img class="logo">
+            <button class="open-menu" id="open-menu">
+                <i class="bi bi-list"></i>
+            </button>
+        </header>
         <aside>
+            <button class="close-menu" id="close-menu">
+                <i class="bi bi-x"></i>
+            </button>
             <header>
-                <h1 class="logo">Your Best Mate</h1>
+                <img class="logo" src="./images/Your Best Mate ..png">
             </header>
             <nav>
                 <ul>
@@ -23,10 +42,11 @@
                         <a class="boton-menu boton-volver" href="./index.html">Continue Shopping</a>
                     </li>
                     <li>
-                        <a class="boton-menu boton-carrito active" href="carrito.html"><i class="bi bi-bag"></i>Shopping Cart</a>
+                        <a class="boton-menu boton-carrito active" href="carrito.html"><i class="bi bi-bag"></i>Shopping
+                            Cart</a>
                     </li>
                 </ul>
-            </nav>                  
+            </nav>
             <footer>
                 <p class="texto-footer">© 2023 Your Best Mate</p>
             </footer>
@@ -49,10 +69,15 @@
                     <button id="carrito-acciones-comprar" class="carrito-acciones-comprar">BUY NOW</button>
                 </div>
 
-                <p id="carrito-lleno" class="carrito-lleno disabled">Your purchase has been successful. Thank you for shopping with us. Have a sparky day!</p>
+                <p id="carrito-lleno" class="carrito-lleno disabled">Your purchase has been successful. Thank you for
+                    shopping with us. Have a sparky day!</p>
         </main>
     </div>
+    <!--Librerias-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./carrito.js"></script>
+    <script src="./menu.js"></script>
 
 </body>
 
