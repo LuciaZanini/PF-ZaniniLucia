@@ -101,9 +101,9 @@ function agregarAlCarrito(e) {
         text: "Item added",
         duration: 3000,
         close: true,
-        gravity: "top", // `top` or `bottom`
-        position: "right", // `left`, `center` or `right`
-        stopOnFocus: true, // Prevents dismissing of toast on hover
+        gravity: "top", 
+        position: "right", 
+        stopOnFocus: true, 
         style: {
             background: "linear-gradient(to right, #964B00, #FFFFFF)",
             textTransform: "uppercase",
@@ -111,10 +111,10 @@ function agregarAlCarrito(e) {
             fontSize: "0.75rem",
         },
         offset: {
-            x: "1.5rem", // horizontal axis - can be a number or a string indicating unity. eg: '2em'
-            y: "1.5rem" // vertical axis - can be a number or a string indicating unity. eg: '2em'
+            x: "1.5rem", 
+            y: "1.5rem" 
           },       
-        onClick: function(){} // Callback after click
+        onClick: function(){} 
       }).showToast();
 
     const idBoton = e.currentTarget.id;

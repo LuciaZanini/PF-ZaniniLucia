@@ -321,7 +321,7 @@ main {
         align-items: center;
     }
 
-    .header-mobile.logo {
+    .header-mobile .logo {
         width: 100px;
         height: 100px;
     }
