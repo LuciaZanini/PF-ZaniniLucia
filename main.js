@@ -58,7 +58,6 @@ function cargarProductos(productosElegidos) {
     actualizarBotonesAgregar();
 }
 
-
 // Evento para los botones
 
 botonesCategorias.forEach(boton => {
