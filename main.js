@@ -1,3 +1,24 @@
+// Sweet alert para que los users puedan subscribirse
+document.addEventListener("DOMContentLoaded", function () {
+    // Chequea si el prompt ya aparecio anteriormente
+    if (!localStorage.getItem("emailPromptShown")) {
+      // SweetAlert prompt para capturar el user's email address 
+      Swal.fire({
+        title: "Welcome to Your Best Mate. Please enter your email address to obtain 10% off on your first purchase",
+        input: "email",
+        inputLabel: "Your email address",
+        inputPlaceholder: "Enter your email address",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          const email = result.value;
+          Swal.fire(`A discount code was sent to: ${email}, happy shopping!`);
+          localStorage.setItem("emailPromptShown", true);
+        }
+      });
+    }
+  });
+  
+// Utilizo fetch para obtener datos de un json local, en este caso desde productos.json 
 let productos = [];
 
 fetch("./productos.json")
@@ -14,7 +35,7 @@ let botonesAgregar = document.querySelectorAll(".producto-agregar");
 const numerito = document.querySelector("#numerito");
 
 // Función para cargar los productos en la página según la categoría seleccionada
-// Crea un elemento div para cada producto y lo agrega al contenedor
+// esta función crea un elemento div para cada producto y lo agrega al contenedor
 
 function cargarProductos(productosElegidos) {
 
