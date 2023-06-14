@@ -1,1 +1,5 @@
-# PF-ZaniniLucia
+Proyecto Final 
+Javascript
+CODERHOUSE
+Your Best Mate 
+Shopping cart
